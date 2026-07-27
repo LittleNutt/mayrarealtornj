@@ -379,17 +379,26 @@ h3 {
   transform: translateY(-2px);
 }
 
-.contact-pill span {
+.contact-icon {
   align-items: center;
   background: var(--gold);
   color: var(--ink);
   display: inline-flex;
-  font-size: 0.78rem;
-  font-weight: 900;
-  height: 30px;
+  height: 34px;
   justify-content: center;
-  min-width: 30px;
-  padding: 0 7px;
+  width: 34px;
+}
+
+.contact-icon svg {
+  display: block;
+  fill: currentColor;
+  height: 19px;
+  width: 19px;
+}
+
+.contact-label {
+  color: inherit;
+  font-weight: 900;
 }
 
 .section {
