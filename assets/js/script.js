@@ -22,11 +22,6 @@ const siteConfig = {
       label: "TikTok",
       icon: "https://cdn.simpleicons.org/tiktok/ffffff",
       url: "https://www.tiktok.com/@mayrarealtornj"
-    },
-    {
-      label: "LinkedIn",
-      icon: "https://cdn.simpleicons.org/linkedin/ffffff",
-      url: "https://www.linkedin.com/"
     }
   ],
   listings: [
