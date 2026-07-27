@@ -111,20 +111,39 @@ textarea {
 .brand {
   align-items: center;
   display: inline-flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 .brand-mark {
   align-items: center;
   aspect-ratio: 1;
-  background: var(--ink);
+  background:
+    linear-gradient(145deg, rgba(183, 154, 88, 0.18), transparent 42%),
+    var(--ink);
+  border: 1px solid rgba(183, 154, 88, 0.72);
+  box-shadow: 0 10px 26px rgba(17, 17, 17, 0.16);
   color: var(--gold);
   display: inline-flex;
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1.36rem;
   font-weight: 700;
   justify-content: center;
-  width: 46px;
+  line-height: 1;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+  width: 54px;
+}
+
+.brand-mark::before {
+  border: 1px solid rgba(247, 244, 239, 0.18);
+  content: "";
+  inset: 5px;
+  position: absolute;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 3px;
 }
 
 .brand strong,
@@ -134,15 +153,16 @@ textarea {
 
 .brand strong {
   font-family: var(--serif);
-  font-size: 1.42rem;
+  font-size: 1.52rem;
+  font-weight: 700;
   line-height: 1;
 }
 
 .brand small {
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  color: var(--gold-dark);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
