@@ -10,17 +10,17 @@ const siteConfig = {
   socials: [
     {
       label: "Instagram",
-      icon: "https://cdn.simpleicons.org/instagram/ffffff",
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.55a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>`,
       url: "https://www.instagram.com/mayrarealtornj"
     },
     {
       label: "Facebook",
-      icon: "https://cdn.simpleicons.org/facebook/ffffff",
-      url: "https://www.facebook.com/mayrarealtornj"
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.49 17.52 2 12 2S2 6.49 2 12.06C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.25c-1.24 0-1.63.77-1.63 1.56v1.9h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06Z"/></svg>`,
+      url: "https://facebook.com/mayra.galarza.165"
     },
     {
       label: "TikTok",
-      icon: "https://cdn.simpleicons.org/tiktok/ffffff",
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.64 2c.34 2.58 1.78 4.12 4.36 4.29v3.2a7.5 7.5 0 0 1-4.29-1.31v6.69c0 4.06-2.54 6.87-6.34 6.87-3.19 0-5.37-2.04-5.37-5.01 0-3.3 2.55-5.55 6.28-5.39.3.01.59.05.89.11v3.35a3.47 3.47 0 0 0-1.16-.2c-1.52 0-2.55.84-2.55 2.04 0 1.07.86 1.82 2.01 1.82 1.42 0 2.42-.91 2.42-2.92V2h3.75Z"/></svg>`,
       url: "https://www.tiktok.com/@mayrarealtornj"
     }
   ],
@@ -168,7 +168,7 @@ function renderSocials() {
     .map(
       (social) => `
         <a class="social-link" href="${social.url}" target="_blank" rel="noopener" aria-label="Follow Mayra on ${social.label}">
-          <img class="social-icon" src="${social.icon}" alt="" aria-hidden="true" loading="lazy" width="22" height="22" />
+          <span class="social-icon">${social.icon}</span>
           <span>${social.label}</span>
         </a>
       `
