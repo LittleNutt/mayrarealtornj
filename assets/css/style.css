@@ -111,6 +111,86 @@ textarea {
 .brand {
   align-items: center;
   display: inline-flex;
+  gap: 14px;
+}
+
+.brand-emblem {
+  align-items: center;
+  background:
+    linear-gradient(145deg, rgba(183, 154, 88, 0.22), transparent 48%),
+    var(--ink);
+  border: 1px solid rgba(183, 154, 88, 0.75);
+  box-shadow: 0 14px 34px rgba(17, 17, 17, 0.14);
+  display: inline-flex;
+  height: 54px;
+  justify-content: center;
+  position: relative;
+  width: 54px;
+}
+
+.brand-emblem::before {
+  border: 1px solid rgba(247, 244, 239, 0.18);
+  content: "";
+  inset: 5px;
+  position: absolute;
+}
+
+.emblem-roof {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 13px solid var(--gold);
+  height: 0;
+  position: absolute;
+  top: 14px;
+  width: 0;
+}
+
+.emblem-roof::after {
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 9px solid var(--ink);
+  content: "";
+  left: -11px;
+  position: absolute;
+  top: 4px;
+}
+
+.emblem-door {
+  background: var(--gold);
+  height: 15px;
+  position: absolute;
+  top: 27px;
+  width: 18px;
+}
+
+.emblem-door::after {
+  background: var(--ink);
+  content: "";
+  height: 8px;
+  left: 6px;
+  position: absolute;
+  top: 7px;
+  width: 6px;
+}
+
+.emblem-key {
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  bottom: 10px;
+  height: 8px;
+  position: absolute;
+  right: 10px;
+  width: 8px;
+}
+
+.emblem-key::after {
+  background: var(--gold);
+  content: "";
+  height: 2px;
+  left: 6px;
+  position: absolute;
+  top: 1px;
+  width: 9px;
 }
 
 .brand-copy {
