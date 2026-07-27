@@ -5,7 +5,7 @@ const siteConfig = {
     phoneRaw: "13479354566",
     email: "mayra.galarza@exprealty.com",
     whatsappRaw: "13479354566",
-    formEndpoint: ""
+    formEndpoint: "https://api.web3forms.com/submit"
   },
   socials: [
     {
@@ -187,14 +187,68 @@ navLinks.addEventListener("click", (event) => {
   }
 });
 
-contactForm.addEventListener("submit", (event) => {
-  if (!siteConfig.contact.formEndpoint) {
-    event.preventDefault();
-    formNote.textContent = "Thanks. Form delivery is ready to connect to Mayra's preferred inbox or CRM.";
+function setFormMessage(message, status = "") {
+  formNote.textContent = message;
+  formNote.classList.toggle("is-success", status === "success");
+  formNote.classList.toggle("is-error", status === "error");
+}
+
+function setSubmittingState(isSubmitting) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  submitButton.disabled = isSubmitting;
+  submitButton.textContent = isSubmitting ? "Sending..." : "Send Message";
+}
+
+function getFormPayload() {
+  const formData = new FormData(contactForm);
+  if (!formData.has("botcheck")) {
+    formData.append("botcheck", "");
+  }
+  return formData;
+}
+
+async function submitContactForm() {
+  const response = await fetch(siteConfig.contact.formEndpoint, {
+    method: "POST",
+    headers: {
+      Accept: "application/json"
+    },
+    body: getFormPayload()
+  });
+
+  const result = await response.json();
+
+  if (!response.ok || !result.success) {
+    throw new Error(result.message || "Submission failed");
+  }
+}
+
+contactForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  setFormMessage("");
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
     return;
   }
 
-  contactForm.action = siteConfig.contact.formEndpoint;
+  setSubmittingState(true);
+
+  try {
+    await submitContactForm();
+    contactForm.reset();
+    setFormMessage(
+      "Thank you! Your message has been sent successfully. We will contact you shortly.",
+      "success"
+    );
+  } catch (error) {
+    setFormMessage(
+      "Something went wrong. Please try again or contact Mayra directly.",
+      "error"
+    );
+  } finally {
+    setSubmittingState(false);
+  }
 });
 
 window.addEventListener("scroll", setHeaderState, { passive: true });

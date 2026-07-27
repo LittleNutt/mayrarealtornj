@@ -199,7 +199,10 @@
           <div class="contact-details" data-contact-details></div>
         </div>
 
-        <form class="contact-form" data-contact-form method="post">
+        <form class="contact-form" data-contact-form method="post" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="f244487d-fc3c-48ac-a440-937aed67970a" />
+          <input type="hidden" name="subject" value="New Lead from MayraRealtorNJ.com" />
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;" />
           <label>
             Name
             <input type="text" name="name" autocomplete="name" required />
