@@ -24,44 +24,7 @@ const siteConfig = {
       url: "https://www.tiktok.com/@mayrarealtornj"
     }
   ],
-  listings: [
-    {
-      status: "Active",
-      price: "$625,000",
-      address: "18 Linden Avenue",
-      city: "Montclair, NJ",
-      beds: "4 Beds",
-      baths: "3 Baths",
-      sqft: "2,180 Sq Ft",
-      description: "Sun-filled colonial with warm finishes, flexible living spaces, and a private backyard close to shops and transit.",
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80",
-      detailsUrl: "#contact"
-    },
-    {
-      status: "New",
-      price: "$479,900",
-      address: "42 Parkview Terrace",
-      city: "Clifton, NJ",
-      beds: "3 Beds",
-      baths: "2 Baths",
-      sqft: "1,640 Sq Ft",
-      description: "Updated home with an open main level, finished lower space, and a commuter-friendly location.",
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
-      detailsUrl: "#contact"
-    },
-    {
-      status: "Featured",
-      price: "$735,000",
-      address: "7 Willow Court",
-      city: "West Orange, NJ",
-      beds: "5 Beds",
-      baths: "4 Baths",
-      sqft: "2,950 Sq Ft",
-      description: "Elegant residence with generous rooms, a polished kitchen, and outdoor space made for hosting.",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      detailsUrl: "#contact"
-    }
-  ]
+  listings: []
 };
 
 const header = document.querySelector("[data-header]");
@@ -137,6 +100,18 @@ function renderContact() {
 }
 
 function renderListings() {
+  if (!siteConfig.listings.length) {
+    listingGrid.innerHTML = `
+      <div class="listing-empty">
+        <p class="eyebrow">New Listings Coming Soon</p>
+        <h3>Fresh New Jersey homes will be featured here shortly.</h3>
+        <p>Contact Mayra today to ask about current opportunities, upcoming inventory, or help starting your home search.</p>
+        <a class="button button-primary" href="#contact">Contact Me Today</a>
+      </div>
+    `;
+    return;
+  }
+
   listingGrid.innerHTML = siteConfig.listings
     .map(
       (listing) => `
