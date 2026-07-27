@@ -619,10 +619,11 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--white);
   display: inline-flex;
+  gap: 10px;
   font-weight: 900;
   height: 58px;
   justify-content: center;
-  min-width: 58px;
+  min-width: 148px;
   padding: 0 18px;
   transition: background 180ms ease, transform 180ms ease;
 }
@@ -631,6 +632,17 @@ h3 {
   background: var(--gold);
   color: var(--ink);
   transform: translateY(-3px);
+}
+
+.social-icon {
+  flex: 0 0 auto;
+  height: 22px;
+  transition: filter 180ms ease;
+  width: 22px;
+}
+
+.social-link:hover .social-icon {
+  filter: brightness(0);
 }
 
 .contact {

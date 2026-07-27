@@ -1,17 +1,33 @@
 const siteConfig = {
-  // Update these values when Mayra's verified contact details and MLS-approved listings are ready.
+  // Update these values when Mayra's verified social links and MLS-approved listings are ready.
   contact: {
-    phoneLabel: "(908) 000-0000",
-    phoneRaw: "19080000000",
+    phoneLabel: "(347) 935-4566",
+    phoneRaw: "13479354566",
     email: "hello@mayrarealtornj.com",
-    whatsappRaw: "19080000000",
+    whatsappRaw: "13479354566",
     formEndpoint: ""
   },
   socials: [
-    { label: "Instagram", short: "IG", url: "https://www.instagram.com/mayrarealtornj" },
-    { label: "Facebook", short: "FB", url: "https://www.facebook.com/mayrarealtornj" },
-    { label: "TikTok", short: "TK", url: "https://www.tiktok.com/@mayrarealtornj" },
-    { label: "LinkedIn", short: "IN", url: "https://www.linkedin.com/" }
+    {
+      label: "Instagram",
+      icon: "https://cdn.simpleicons.org/instagram/ffffff",
+      url: "https://www.instagram.com/mayrarealtornj"
+    },
+    {
+      label: "Facebook",
+      icon: "https://cdn.simpleicons.org/facebook/ffffff",
+      url: "https://www.facebook.com/mayrarealtornj"
+    },
+    {
+      label: "TikTok",
+      icon: "https://cdn.simpleicons.org/tiktok/ffffff",
+      url: "https://www.tiktok.com/@mayrarealtornj"
+    },
+    {
+      label: "LinkedIn",
+      icon: "https://cdn.simpleicons.org/linkedin/ffffff",
+      url: "https://www.linkedin.com/"
+    }
   ],
   listings: [
     {
@@ -136,7 +152,8 @@ function renderSocials() {
     .map(
       (social) => `
         <a class="social-link" href="${social.url}" target="_blank" rel="noopener" aria-label="Follow Mayra on ${social.label}">
-          ${social.short}
+          <img class="social-icon" src="${social.icon}" alt="" aria-hidden="true" loading="lazy" width="22" height="22" />
+          <span>${social.label}</span>
         </a>
       `
     )
