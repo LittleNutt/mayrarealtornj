@@ -53,14 +53,14 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skipLink">Skip to content</a>
 
     <header class="site-header" data-header>
       <nav class="nav-shell" aria-label="Primary navigation">
         <a class="brand" href="#home" aria-label="Mayra Galarza home">
           <span class="brand-copy">
             <strong>Mayra Galarza</strong>
-            <small>New Jersey REALTOR®</small>
+            <small data-i18n="brandSubtitle">New Jersey REALTOR®</small>
           </span>
         </a>
 
@@ -72,10 +72,14 @@
         </button>
 
         <div class="nav-links" id="site-menu">
-          <a href="#home">Home</a>
-          <a href="#listings">Listings</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" data-i18n="navHome">Home</a>
+          <a href="#listings" data-i18n="navListings">Listings</a>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+          <button class="language-toggle" type="button" data-language-toggle aria-label="Change language to Spanish" aria-pressed="false" data-language="en">
+            <span class="language-option">EN</span>
+            <span class="language-option">ES</span>
+          </button>
         </div>
       </nav>
     </header>
@@ -83,16 +87,15 @@
     <main id="main">
       <section class="hero section-reveal" id="home">
         <div class="hero-content">
-          <p class="eyebrow">New Jersey Real Estate</p>
+          <p class="eyebrow" data-i18n="heroEyebrow">New Jersey Real Estate</p>
           <h1>Mayra Galarza</h1>
-          <p class="hero-role">REALTOR® | eXp Realty</p>
+          <p class="hero-role" data-i18n="heroRole">REALTOR® | eXp Realty</p>
           <p class="hero-copy">
-            Helping families buy and sell homes throughout New Jersey with clarity,
-            care, and bilingual guidance.
+            <span data-i18n="heroCopy">Helping families buy and sell homes throughout New Jersey with clarity, care, and bilingual guidance.</span>
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#listings">View Listings</a>
-            <a class="button button-secondary" href="#contact">Contact Me Today</a>
+            <a class="button button-primary" href="#listings" data-i18n="viewListings">View Listings</a>
+            <a class="button button-secondary" href="#contact" data-i18n="contactMeToday">Contact Me Today</a>
           </div>
         </div>
 
@@ -113,88 +116,83 @@
 
       <section class="section section-reveal" id="listings">
         <div class="section-heading">
-          <p class="eyebrow">Featured Listings</p>
-          <h2>Homes Worth a Closer Look</h2>
+          <p class="eyebrow" data-i18n="featuredListings">Featured Listings</p>
+          <h2 data-i18n="listingsTitle">Homes Worth a Closer Look</h2>
         </div>
         <div class="listing-grid" data-listings></div>
       </section>
 
       <section class="about section-reveal" id="about">
         <div class="about-content">
-          <p class="eyebrow">About Mayra</p>
-          <h2>A Steady Guide for Your Next Move</h2>
+          <p class="eyebrow" data-i18n="aboutEyebrow">About Mayra</p>
+          <h2 data-i18n="aboutTitle">A Steady Guide for Your Next Move</h2>
           <p>
-            Mayra Galarza is a licensed REALTOR® with eXp Realty serving buyers
-            and sellers throughout New Jersey. She brings a calm, practical,
-            relationship-first approach to every conversation, helping clients feel
-            informed from first showing to closing day.
+            <span data-i18n="aboutCopyOne">Mayra Galarza is a licensed REALTOR® with eXp Realty serving buyers and sellers throughout New Jersey. She brings a calm, practical, relationship-first approach to every conversation, helping clients feel informed from first showing to closing day.</span>
           </p>
           <p>
-            Bilingual in English and Spanish, Mayra supports first-time buyers,
-            growing families, sellers, and investors with thoughtful communication,
-            local market perspective, and a deep respect for what home means.
+            <span data-i18n="aboutCopyTwo">Bilingual in English and Spanish, Mayra supports first-time buyers, growing families, sellers, and investors with thoughtful communication, local market perspective, and a deep respect for what home means.</span>
           </p>
           <div class="trust-row" aria-label="Professional highlights">
-            <span>Licensed REALTOR®</span>
+            <span data-i18n="trustLicensed">Licensed REALTOR®</span>
             <span>eXp Realty</span>
-            <span>English & Spanish</span>
+            <span data-i18n="trustBilingual">English & Spanish</span>
           </div>
         </div>
       </section>
 
       <section class="section section-reveal services" aria-labelledby="services-title">
         <div class="section-heading">
-          <p class="eyebrow">Why Work With Me</p>
-          <h2 id="services-title">Personal Service, Polished Results</h2>
+          <p class="eyebrow" data-i18n="servicesEyebrow">Why Work With Me</p>
+          <h2 id="services-title" data-i18n="servicesTitle">Personal Service, Polished Results</h2>
         </div>
         <div class="service-grid">
           <article>
             <span>01</span>
-            <h3>First-Time Buyers</h3>
-            <p>Clear next steps, patient education, and guidance from search to keys.</p>
+            <h3 data-i18n="serviceOneTitle">First-Time Buyers</h3>
+            <p data-i18n="serviceOneCopy">Clear next steps, patient education, and guidance from search to keys.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>Home Sellers</h3>
-            <p>Pricing perspective, preparation strategy, and a confident launch plan.</p>
+            <h3 data-i18n="serviceTwoTitle">Home Sellers</h3>
+            <p data-i18n="serviceTwoCopy">Pricing perspective, preparation strategy, and a confident launch plan.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>Local Knowledge</h3>
-            <p>New Jersey market context for neighborhoods, value, and timing.</p>
+            <h3 data-i18n="serviceThreeTitle">Local Knowledge</h3>
+            <p data-i18n="serviceThreeCopy">New Jersey market context for neighborhoods, value, and timing.</p>
           </article>
           <article>
             <span>04</span>
-            <h3>Personalized Service</h3>
-            <p>Responsive communication shaped around each client's goals.</p>
+            <h3 data-i18n="serviceFourTitle">Personalized Service</h3>
+            <p data-i18n="serviceFourCopy">Responsive communication shaped around each client's goals.</p>
           </article>
           <article>
             <span>05</span>
-            <h3>Investment Properties</h3>
-            <p>Practical support for buyers evaluating opportunity and long-term fit.</p>
+            <h3 data-i18n="serviceFiveTitle">Investment Properties</h3>
+            <p data-i18n="serviceFiveCopy">Practical support for buyers evaluating opportunity and long-term fit.</p>
           </article>
           <article>
             <span>06</span>
-            <h3>English & Spanish</h3>
-            <p>Bilingual guidance that helps every client feel heard and prepared.</p>
+            <h3 data-i18n="serviceSixTitle">English & Spanish</h3>
+            <p data-i18n="serviceSixCopy">Bilingual guidance that helps every client feel heard and prepared.</p>
           </article>
         </div>
       </section>
 
       <section class="social-band section-reveal" aria-labelledby="social-title">
         <div>
-          <p class="eyebrow">Connect With Mayra</p>
-          <h2 id="social-title">Follow Along for Homes, Tips, and Local Updates</h2>
+          <p class="eyebrow" data-i18n="socialEyebrow">Connect With Mayra</p>
+          <h2 id="social-title" data-i18n="socialTitle">Follow Along for Homes, Tips, and Local Updates</h2>
         </div>
         <div class="social-links" data-social-links></div>
       </section>
 
       <section class="contact section-reveal" id="contact">
         <div class="contact-copy">
-          <p class="eyebrow">Contact</p>
-          <h2>Ready to Talk About Your Next Move?</h2>
+          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+          <h2 data-i18n="contactTitle">Ready to Talk About Your Next Move?</h2>
           <p>
-            Send a note, call directly, or text Mayra for a quicker conversation.
+            <span data-i18n="contactCopy">Send a note, call directly, or text Mayra for a quicker conversation.</span>
           </p>
           <div class="contact-details" data-contact-details></div>
         </div>
@@ -204,22 +202,22 @@
           <input type="hidden" name="subject" value="New Lead from MayraRealtorNJ.com" />
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;" />
           <label>
-            Name
+            <span data-i18n="formName">Name</span>
             <input type="text" name="name" autocomplete="name" required />
           </label>
           <label>
-            Email
+            <span data-i18n="formEmail">Email</span>
             <input type="email" name="email" autocomplete="email" required />
           </label>
           <label>
-            Phone
+            <span data-i18n="formPhone">Phone</span>
             <input type="tel" name="phone" autocomplete="tel" />
           </label>
           <label>
-            Message
+            <span data-i18n="formMessage">Message</span>
             <textarea name="message" rows="5" required></textarea>
           </label>
-          <button class="button button-primary" type="submit">Send Message</button>
+          <button class="button button-primary" type="submit" data-submit-button data-i18n="sendMessage">Send Message</button>
           <p class="form-note" data-form-note role="status"></p>
         </form>
       </section>
@@ -228,11 +226,11 @@
     <footer class="site-footer">
       <div>
         <strong>Mayra Galarza</strong>
-        <span>REALTOR® | eXp Realty</span>
+        <span data-i18n="heroRole">REALTOR® | eXp Realty</span>
       </div>
       <div class="footer-contact" data-footer-contact></div>
-      <p>Each Office Independently Owned and Operated.</p>
-      <p>&copy; <span data-year></span> Mayra Galarza. All rights reserved.</p>
+      <p data-i18n="footerDisclaimer">Each Office Independently Owned and Operated.</p>
+      <p>&copy; <span data-year></span> Mayra Galarza. <span data-i18n="footerRights">All rights reserved.</span></p>
     </footer>
 
     <script src="assets/js/script.js" defer></script>

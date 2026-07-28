@@ -22,14 +22,142 @@ const siteConfig = {
       label: "TikTok",
       icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.64 2c.34 2.58 1.78 4.12 4.36 4.29v3.2a7.5 7.5 0 0 1-4.29-1.31v6.69c0 4.06-2.54 6.87-6.34 6.87-3.19 0-5.37-2.04-5.37-5.01 0-3.3 2.55-5.55 6.28-5.39.3.01.59.05.89.11v3.35a3.47 3.47 0 0 0-1.16-.2c-1.52 0-2.55.84-2.55 2.04 0 1.07.86 1.82 2.01 1.82 1.42 0 2.42-.91 2.42-2.92V2h3.75Z"/></svg>`,
       url: "https://www.tiktok.com/@mayrarealtornj"
+    },
+    {
+      label: "WhatsApp",
+      icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38a9.88 9.88 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01Zm-7 15.24h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.25 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29Z"/></svg>`,
+      get url() {
+        return `https://wa.me/${siteConfig.contact.whatsappRaw}`;
+      }
     }
   ],
   listings: []
 };
 
+const translations = {
+  en: {
+    languageAria: "Change language to Spanish",
+    skipLink: "Skip to content",
+    brandSubtitle: "New Jersey REALTOR®",
+    navHome: "Home",
+    navListings: "Listings",
+    navAbout: "About",
+    navContact: "Contact",
+    heroEyebrow: "New Jersey Real Estate",
+    heroRole: "REALTOR® | eXp Realty",
+    heroCopy: "Helping families buy and sell homes throughout New Jersey with clarity, care, and bilingual guidance.",
+    viewListings: "View Listings",
+    contactMeToday: "Contact Me Today",
+    call: "Call",
+    text: "Text",
+    email: "Email",
+    featuredListings: "Featured Listings",
+    listingsTitle: "Homes Worth a Closer Look",
+    comingSoonEyebrow: "New Listings Coming Soon",
+    comingSoonTitle: "Fresh New Jersey homes will be featured here shortly.",
+    comingSoonCopy: "Contact Mayra today to ask about current opportunities, upcoming inventory, or help starting your home search.",
+    aboutEyebrow: "About Mayra",
+    aboutTitle: "A Steady Guide for Your Next Move",
+    aboutCopyOne: "Mayra Galarza is a licensed REALTOR® with eXp Realty serving buyers and sellers throughout New Jersey. She brings a calm, practical, relationship-first approach to every conversation, helping clients feel informed from first showing to closing day.",
+    aboutCopyTwo: "Bilingual in English and Spanish, Mayra supports first-time buyers, growing families, sellers, and investors with thoughtful communication, local market perspective, and a deep respect for what home means.",
+    trustLicensed: "Licensed REALTOR®",
+    trustBilingual: "English & Spanish",
+    servicesEyebrow: "Why Work With Me",
+    servicesTitle: "Personal Service, Polished Results",
+    serviceOneTitle: "First-Time Buyers",
+    serviceOneCopy: "Clear next steps, patient education, and guidance from search to keys.",
+    serviceTwoTitle: "Home Sellers",
+    serviceTwoCopy: "Pricing perspective, preparation strategy, and a confident launch plan.",
+    serviceThreeTitle: "Local Knowledge",
+    serviceThreeCopy: "New Jersey market context for neighborhoods, value, and timing.",
+    serviceFourTitle: "Personalized Service",
+    serviceFourCopy: "Responsive communication shaped around each client's goals.",
+    serviceFiveTitle: "Investment Properties",
+    serviceFiveCopy: "Practical support for buyers evaluating opportunity and long-term fit.",
+    serviceSixTitle: "English & Spanish",
+    serviceSixCopy: "Bilingual guidance that helps every client feel heard and prepared.",
+    socialEyebrow: "Connect With Mayra",
+    socialTitle: "Follow Along for Homes, Tips, and Local Updates",
+    contactEyebrow: "Contact",
+    contactTitle: "Ready to Talk About Your Next Move?",
+    contactCopy: "Send a note, call directly, or text Mayra for a quicker conversation.",
+    formName: "Name",
+    formEmail: "Email",
+    formPhone: "Phone",
+    formMessage: "Message",
+    sendMessage: "Send Message",
+    sending: "Sending...",
+    successMessage: "Thank you! Your message has been sent successfully. We will contact you shortly.",
+    errorMessage: "Something went wrong. Please try again or contact Mayra directly.",
+    footerDisclaimer: "Each Office Independently Owned and Operated.",
+    footerRights: "All rights reserved."
+  },
+  es: {
+    languageAria: "Cambiar idioma a inglés",
+    skipLink: "Saltar al contenido",
+    brandSubtitle: "REALTOR® en Nueva Jersey",
+    navHome: "Inicio",
+    navListings: "Propiedades",
+    navAbout: "Sobre Mayra",
+    navContact: "Contacto",
+    heroEyebrow: "Bienes Raíces en Nueva Jersey",
+    heroRole: "REALTOR® | eXp Realty",
+    heroCopy: "Ayudando a familias a comprar y vender casas en todo Nueva Jersey con claridad, dedicación y orientación bilingüe.",
+    viewListings: "Ver Propiedades",
+    contactMeToday: "Contáctame Hoy",
+    call: "Llamar",
+    text: "Mensaje",
+    email: "Correo",
+    featuredListings: "Propiedades Destacadas",
+    listingsTitle: "Hogares que Vale la Pena Conocer",
+    comingSoonEyebrow: "Nuevas Propiedades Pronto",
+    comingSoonTitle: "Muy pronto se presentarán nuevos hogares en Nueva Jersey.",
+    comingSoonCopy: "Contacta a Mayra hoy para preguntar sobre oportunidades actuales, próximas propiedades o ayuda para comenzar tu búsqueda.",
+    aboutEyebrow: "Sobre Mayra",
+    aboutTitle: "Una Guía Confiable para Tu Próxima Mudanza",
+    aboutCopyOne: "Mayra Galarza es una REALTOR® licenciada con eXp Realty que sirve a compradores y vendedores en todo Nueva Jersey. Ofrece un enfoque tranquilo, práctico y centrado en la relación con cada cliente, ayudándoles a sentirse informados desde la primera visita hasta el cierre.",
+    aboutCopyTwo: "Bilingüe en inglés y español, Mayra apoya a compradores primerizos, familias, vendedores e inversionistas con comunicación clara, conocimiento del mercado local y profundo respeto por lo que significa el hogar.",
+    trustLicensed: "REALTOR® Licenciada",
+    trustBilingual: "Inglés y Español",
+    servicesEyebrow: "Por Qué Trabajar Conmigo",
+    servicesTitle: "Servicio Personal, Resultados Profesionales",
+    serviceOneTitle: "Compradores Primerizos",
+    serviceOneCopy: "Pasos claros, orientación paciente y apoyo desde la búsqueda hasta recibir las llaves.",
+    serviceTwoTitle: "Vendedores de Casas",
+    serviceTwoCopy: "Perspectiva de precio, estrategia de preparación y un plan de lanzamiento seguro.",
+    serviceThreeTitle: "Conocimiento Local",
+    serviceThreeCopy: "Contexto del mercado de Nueva Jersey para vecindarios, valor y momento adecuado.",
+    serviceFourTitle: "Servicio Personalizado",
+    serviceFourCopy: "Comunicación atenta adaptada a las metas de cada cliente.",
+    serviceFiveTitle: "Propiedades de Inversión",
+    serviceFiveCopy: "Apoyo práctico para compradores que evalúan oportunidad y valor a largo plazo.",
+    serviceSixTitle: "Inglés y Español",
+    serviceSixCopy: "Orientación bilingüe para que cada cliente se sienta escuchado y preparado.",
+    socialEyebrow: "Conecta con Mayra",
+    socialTitle: "Síguela para Ver Hogares, Consejos y Actualizaciones Locales",
+    contactEyebrow: "Contacto",
+    contactTitle: "¿Lista para Hablar Sobre Tu Próxima Mudanza?",
+    contactCopy: "Envía un mensaje, llama directamente o escribe a Mayra para una conversación más rápida.",
+    formName: "Nombre",
+    formEmail: "Correo",
+    formPhone: "Teléfono",
+    formMessage: "Mensaje",
+    sendMessage: "Enviar Mensaje",
+    sending: "Enviando...",
+    successMessage: "¡Gracias! Tu mensaje se ha enviado correctamente. Nos pondremos en contacto contigo pronto.",
+    errorMessage: "Algo salió mal. Inténtalo de nuevo o contacta a Mayra directamente.",
+    footerDisclaimer: "Cada oficina es de propiedad y operación independiente.",
+    footerRights: "Todos los derechos reservados."
+  }
+};
+
+const savedLanguage = localStorage.getItem("mayra-language");
+let currentLanguage = savedLanguage === "es" ? "es" : "en";
+
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const languageToggle = document.querySelector("[data-language-toggle]");
 const contactActions = document.querySelector("[data-contact-actions]");
 const contactDetails = document.querySelector("[data-contact-details]");
 const footerContact = document.querySelector("[data-footer-contact]");
@@ -37,6 +165,33 @@ const listingGrid = document.querySelector("[data-listings]");
 const socialLinks = document.querySelector("[data-social-links]");
 const contactForm = document.querySelector("[data-contact-form]");
 const formNote = document.querySelector("[data-form-note]");
+
+function t(key) {
+  return translations[currentLanguage][key] || translations.en[key] || key;
+}
+
+function applyStaticTranslations() {
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    element.textContent = t(element.dataset.i18n);
+  });
+
+  languageToggle.setAttribute("aria-label", t("languageAria"));
+  languageToggle.setAttribute("aria-pressed", String(currentLanguage === "es"));
+  languageToggle.dataset.language = currentLanguage;
+}
+
+function setLanguage(language) {
+  currentLanguage = language;
+  localStorage.setItem("mayra-language", language);
+  applyStaticTranslations();
+  renderContact();
+  renderListings();
+  renderSocials();
+  setFormMessage("");
+  setSubmittingState(false);
+}
 
 function setHeaderState() {
   header.classList.toggle("is-scrolled", window.scrollY > 8);
@@ -49,31 +204,25 @@ function closeMenu() {
 }
 
 function renderContact() {
-  const { phoneLabel, phoneRaw, email, whatsappRaw } = siteConfig.contact;
+  const { phoneLabel, phoneRaw, email } = siteConfig.contact;
   const actions = [
     {
-      label: "Call",
+      label: t("call"),
       icon: "phone",
       href: `tel:+${phoneRaw}`,
       svg: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.49c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.19 2.2Z"/></svg>`
     },
     {
-      label: "Text",
+      label: t("text"),
       icon: "message",
       href: `sms:+${phoneRaw}`,
       svg: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H8.2l-4.1 3.08A.68.68 0 0 1 3 20.54V6c0-1.1.9-2 2-2Zm1 2v12.5L7.53 16H20V6H5Zm3 4h8v2H8v-2Zm0-3h10v2H8V7Zm0 6h6v2H8v-2Z"/></svg>`
     },
     {
-      label: "Email",
+      label: t("email"),
       icon: "email",
       href: `mailto:${email}`,
       svg: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>`
-    },
-    {
-      label: "WhatsApp",
-      icon: "whatsapp",
-      href: `https://wa.me/${whatsappRaw}`,
-      svg: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38a9.88 9.88 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01Zm-7 15.24h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.25 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29Z"/></svg>`
     }
   ];
 
@@ -103,10 +252,10 @@ function renderListings() {
   if (!siteConfig.listings.length) {
     listingGrid.innerHTML = `
       <div class="listing-empty">
-        <p class="eyebrow">New Listings Coming Soon</p>
-        <h3>Fresh New Jersey homes will be featured here shortly.</h3>
-        <p>Contact Mayra today to ask about current opportunities, upcoming inventory, or help starting your home search.</p>
-        <a class="button button-primary" href="#contact">Contact Me Today</a>
+        <p class="eyebrow">${t("comingSoonEyebrow")}</p>
+        <h3>${t("comingSoonTitle")}</h3>
+        <p>${t("comingSoonCopy")}</p>
+        <a class="button button-primary" href="#contact">${t("contactMeToday")}</a>
       </div>
     `;
     return;
@@ -196,7 +345,7 @@ function setFormMessage(message, status = "") {
 function setSubmittingState(isSubmitting) {
   const submitButton = contactForm.querySelector('button[type="submit"]');
   submitButton.disabled = isSubmitting;
-  submitButton.textContent = isSubmitting ? "Sending..." : "Send Message";
+  submitButton.textContent = isSubmitting ? t("sending") : t("sendMessage");
 }
 
 function getFormPayload() {
@@ -238,12 +387,12 @@ contactForm.addEventListener("submit", async (event) => {
     await submitContactForm();
     contactForm.reset();
     setFormMessage(
-      "Thank you! Your message has been sent successfully. We will contact you shortly.",
+      t("successMessage"),
       "success"
     );
   } catch (error) {
     setFormMessage(
-      "Something went wrong. Please try again or contact Mayra directly.",
+      t("errorMessage"),
       "error"
     );
   } finally {
@@ -251,11 +400,13 @@ contactForm.addEventListener("submit", async (event) => {
   }
 });
 
+languageToggle.addEventListener("click", () => {
+  setLanguage(currentLanguage === "en" ? "es" : "en");
+});
+
 window.addEventListener("scroll", setHeaderState, { passive: true });
 document.querySelector("[data-year]").textContent = new Date().getFullYear();
 
-renderContact();
-renderListings();
-renderSocials();
+setLanguage(currentLanguage);
 setupRevealAnimation();
 setHeaderState();
