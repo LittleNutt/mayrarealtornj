@@ -669,18 +669,23 @@ h3 {
 }
 
 .trust-row span {
+  align-items: center;
   border: 1px solid rgba(183, 154, 88, 0.42);
   color: var(--gold-dark);
+  display: inline-flex;
   font-size: 0.8rem;
   font-weight: 900;
+  justify-content: center;
+  line-height: 1;
+  min-height: 42px;
+  min-width: 158px;
   padding: 10px 14px;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .trust-row .trust-logo {
-  align-items: center;
-  display: inline-flex;
-  min-height: 42px;
+  min-width: 88px;
   padding: 7px 14px;
 }
 
