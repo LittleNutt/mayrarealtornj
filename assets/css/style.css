@@ -516,6 +516,11 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.listing-grid:has(.listing-card:only-child) {
+  grid-template-columns: minmax(0, 420px);
+  justify-content: center;
+}
+
 .listing-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -545,6 +550,91 @@ h3 {
 
 .listing-card:hover .listing-media img {
   transform: scale(1.04);
+}
+
+.listing-carousel {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-button {
+  align-items: center;
+  background: rgba(17, 17, 17, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--white);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--sans);
+  font-size: 2rem;
+  font-weight: 500;
+  height: 42px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  width: 42px;
+  z-index: 2;
+}
+
+.carousel-button:hover,
+.carousel-button:focus-visible {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.carousel-button-prev {
+  left: 12px;
+}
+
+.carousel-button-next {
+  right: 12px;
+}
+
+.photo-count {
+  background: rgba(17, 17, 17, 0.74);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 7px 9px;
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  z-index: 2;
+}
+
+.listing-placeholder {
+  align-items: center;
+  background:
+    linear-gradient(rgba(247, 244, 239, 0.88), rgba(247, 244, 239, 0.88)),
+    radial-gradient(circle at 22% 18%, rgba(183, 154, 88, 0.2), transparent 34%),
+    radial-gradient(circle at 80% 82%, rgba(17, 17, 17, 0.1), transparent 32%);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.listing-placeholder span {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.listing-placeholder small {
+  color: var(--gold-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin-top: 12px;
+  text-transform: uppercase;
 }
 
 .badge {

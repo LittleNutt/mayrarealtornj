@@ -31,7 +31,33 @@ const siteConfig = {
       }
     }
   ],
-  listings: []
+  listings: [
+    {
+      status: "Active",
+      price: "$595,000",
+      address: "407 E 10th Ave",
+      city: "Roselle Boro, NJ 07203",
+      beds: "4 Beds",
+      baths: "3 Baths",
+      sqft: "3,920 Sq Ft Lot",
+      image: "assets/images/listings/407-e-10th-ave/01-front.png",
+      images: [
+        "assets/images/listings/407-e-10th-ave/01-front.png",
+        "assets/images/listings/407-e-10th-ave/02-exterior-side.png",
+        "assets/images/listings/407-e-10th-ave/03-kitchen.png",
+        "assets/images/listings/407-e-10th-ave/04-dining.png",
+        "assets/images/listings/407-e-10th-ave/05-living-room-detail.png",
+        "assets/images/listings/407-e-10th-ave/06-living-room.png",
+        "assets/images/listings/407-e-10th-ave/07-bedroom-closet.png",
+        "assets/images/listings/407-e-10th-ave/08-bedroom.png",
+        "assets/images/listings/407-e-10th-ave/09-bedroom-wide.png",
+        "assets/images/listings/407-e-10th-ave/10-bathroom-wide.png",
+        "assets/images/listings/407-e-10th-ave/11-bathroom-vanity.png"
+      ],
+      description: "Fully renovated single-family home with bright modern interiors, central air, a finished basement, private driveway, and detached garage near shopping, transit, and major highways.",
+      detailsUrl: "https://www.zillow.com/homedetails/407-E-10th-Ave-Roselle-NJ-07203/63132650_zpid/"
+    }
+  ]
 };
 
 const translations = {
@@ -265,10 +291,27 @@ function renderListings() {
 
   listingGrid.innerHTML = siteConfig.listings
     .map(
-      (listing) => `
+      (listing, index) => {
+        const images = listing.images?.length ? listing.images : listing.image ? [listing.image] : [];
+        const hasCarousel = images.length > 1;
+
+        return `
         <article class="listing-card">
           <div class="listing-media">
-            <img src="${listing.image}" alt="${listing.address} in ${listing.city}" loading="lazy" width="1200" height="900" />
+            ${
+              images.length
+                ? `<div class="listing-carousel" data-listing-carousel data-listing-index="${index}">
+                    <img src="${images[0]}" alt="${listing.address} photo 1 of ${images.length}" loading="lazy" width="1200" height="900" data-carousel-image />
+                    ${
+                      hasCarousel
+                        ? `<button class="carousel-button carousel-button-prev" type="button" data-carousel-direction="-1" aria-label="Previous photo">&lsaquo;</button>
+                          <button class="carousel-button carousel-button-next" type="button" data-carousel-direction="1" aria-label="Next photo">&rsaquo;</button>
+                          <span class="photo-count" data-carousel-count>1 / ${images.length}</span>`
+                        : ""
+                    }
+                  </div>`
+                : `<div class="listing-placeholder" role="img" aria-label="${listing.address} listing photo coming soon"><span>${listing.address}</span><small>Photo Coming Soon</small></div>`
+            }
             <span class="badge">${listing.status}</span>
           </div>
           <div class="listing-body">
@@ -284,9 +327,42 @@ function renderListings() {
             <a class="listing-link" href="${listing.detailsUrl}">View Details</a>
           </div>
         </article>
-      `
+      `;
+      }
     )
     .join("");
+
+  setupListingCarousels();
+}
+
+function setupListingCarousels() {
+  document.querySelectorAll("[data-listing-carousel]").forEach((carousel) => {
+    const listingIndex = Number(carousel.dataset.listingIndex);
+    const listing = siteConfig.listings[listingIndex];
+    const images = listing?.images?.length ? listing.images : listing?.image ? [listing.image] : [];
+
+    if (images.length < 2) {
+      return;
+    }
+
+    let currentIndex = 0;
+    const image = carousel.querySelector("[data-carousel-image]");
+    const count = carousel.querySelector("[data-carousel-count]");
+
+    if (!image || !count) {
+      return;
+    }
+
+    carousel.querySelectorAll("[data-carousel-direction]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = Number(button.dataset.carouselDirection);
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        image.src = images[currentIndex];
+        image.alt = `${listing.address} photo ${currentIndex + 1} of ${images.length}`;
+        count.textContent = `${currentIndex + 1} / ${images.length}`;
+      });
+    });
+  });
 }
 
 function renderSocials() {
